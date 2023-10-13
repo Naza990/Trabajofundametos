@@ -1,22 +1,23 @@
 ﻿using System;
 
-namespace MyApp // Note: actual namespace depends on the project name.
+namespace Codigo8
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.Write("Ingresa la longitud en metros: ");
 
-            // Lee la entrada del usuario y la convierte a un valor decimal
-            if (decimal.TryParse(Console.ReadLine(), out decimal metros))
-            {
-                // Realiza la conversión de metros a pies
-                decimal pies = metros * 3.28084m;
+            int Area, a, p;
+            
+            Console.Write("Introduce el valor de tu Apotema:");
+            a = Console.ReadLine();
 
-                // Muestra el resultado
-                Console.WriteLine($"{metros} metros equivalen a {pies} pies.");
-            }
+            Console.Write("introduce el valor de tu Perimetro:");
+            p = Convert.ToInt32(Console.ReadLine());
+
+            Area = (a * p) / 2;
+            Console.Write($" El Area de su Hexagono {Area}");
+
         }
     }
 }
