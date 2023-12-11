@@ -14,11 +14,10 @@ class Program
             Console.Write($"Calificación {i}: ");
             double calificacion = Convert.ToDouble(Console.ReadLine());
 
-            // Asegurarse de que la calificación esté en un rango válido (por ejemplo, 0-100)
             if (calificacion < 0 || calificacion > 100)
             {
                 Console.WriteLine("Ingrese una calificación válida (entre 0 y 100).");
-                i--; // Decrementar el índice para volver a solicitar la misma calificación.
+                i--;
             }
             else
             {
