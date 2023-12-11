@@ -1,29 +1,30 @@
 ﻿using System;
+using System.Text;
 
-namespace U5_P5
+namespace U5_P10
 {
-    internal class U5_P5
+    internal class U5_P10
     {
         static void Main(string[] args)
         {
-            Console.Write("Ingrese una cadena o palabras de texto: ");
-            string texto = Console.ReadLine();
-
-            int cantidadPalabras = ContarPalabras(texto);
-
-            Console.WriteLine("Número de palabras: " + cantidadPalabras);
+            int longitud = 12;
+            string contrasena = Aleatoria(longitud);
+            Console.WriteLine("Contraseña: " + contrasena);
         }
 
-        public static int ContarPalabras(string texto)
+        public static string Aleatoria(int longitud)
         {
-            if (string.IsNullOrEmpty(texto))
+            string caracteres = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ0123456789*-._abcdefghijklmnñopqrstuvwxyz";
+            Random random = new Random();
+            StringBuilder cadena = new StringBuilder(longitud);
+
+            for (int i = 0; i < longitud; i++)
             {
-                return 0;
+                int indiceCaracteres = random.Next(caracteres.Length);
+                cadena.Append(caracteres[indiceCaracteres]);
             }
 
-            string[] palabras = texto.Split(new char[] { ' ', '\t', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
-            return palabras.Length;
+            return cadena.ToString();
         }
     }
-
 }
