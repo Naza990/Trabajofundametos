@@ -1,30 +1,19 @@
 ﻿using System;
-using System.Text;
-
-namespace U5_P10
+namespace Prueba
 {
-    internal class U5_P10
+    internal class Prueba
     {
         static void Main(string[] args)
         {
-            int longitud = 12;
-            string contrasena = Aleatoria(longitud);
-            Console.WriteLine("Contraseña: " + contrasena);
-        }
-
-        public static string Aleatoria(int longitud)
-        {
-            string caracteres = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ0123456789*-._abcdefghijklmnñopqrstuvwxyz";
-            Random random = new Random();
-            StringBuilder cadena = new StringBuilder(longitud);
-
-            for (int i = 0; i < longitud; i++)
+            double S = 1500, I = 0.10, i, s = 0;
+            int años = 6;
+            for (i = 1; i <= años && años > 0; i++)
             {
-                int indiceCaracteres = random.Next(caracteres.Length);
-                cadena.Append(caracteres[indiceCaracteres]);
+                S = (S * I) + S;
+                Console.WriteLine("El salario anual " + i + " es de: $" + S);
+                s = s + S;
             }
-
-            return cadena.ToString();
+            Console.WriteLine("El salario a los 6 años es: $" + s);
         }
     }
 }
