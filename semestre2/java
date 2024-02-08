@@ -1,1 +1,16 @@
+import java.util.Scanner;
+
+public class CalculadoraAreaCirculo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Introduce el valor del radio: ");
+        double radio = scanner.nextDouble();
+
+        // Calcular el área
+        double area = 3.1416 * radio * radio;
+
+        System.out.println("El área del círculo es: " + area);
+    }
+}
 
